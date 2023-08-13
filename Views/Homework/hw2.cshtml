@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "hw2";
+}
+
+<h1>hw2</h1>
+<div class="row "></div>
+
+@section Scripts{
+    <script src="~/datas/travel.js"></script>
+    <script>
+        $(document).ready(function () {
+            const cardContainer = $('.row');
+            spots.CommonFormat.Section.forEach(item => {
+                const cards = `
+                    <div class="card" style="width: 50REM;">
+                            <img src="${item.file.img[0].text}" class="card-img-top" alt="${item.stitle}">
+                            <div class="card-body">
+                                <h2 class="card-title">${item.stitle}</h2>
+                                <p class="card-text">${item.xbody}</p>
+
+                        </div>
+                    </div>
+                `;
+                cardContainer.append(cards);
+            });
+        });
+    </script>
+}
